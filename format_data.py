@@ -24,12 +24,21 @@ for match in matches_dict:
             "assists": participant["assists"],
             "role": participant["role"],
             "wards killed": participant["wardsKilled"],
-            "wards placed": participant["wardsPlaced"]  
+            "wards placed": participant["wardsPlaced"],
+            "dragon kills": participant["dragonKills"],
+            "baron kills": participant["baronKills"],
+            "damage dealt to objectives": participant["damageDealtToObjectives"],
+            "damage dealt to turrets": participant["damageDealtToTurrets"],
+            "turrets lost": participant["turretsLost"],
+            "turret kills": participant["turretKills"],
+            "total minions killed": participant["totalMinionsKilled"],
+            "inhibitor takedowns": participant["inhibitorTakedowns"],
+            "inhibitor kills": participant["inhibitorKills"]
         })
 
 matches_formatted_file = open('matches_formatted.csv', 'w', encoding="utf-8")
 writer = csv.writer(matches_formatted_file)
-writer.writerow(["summoner name", "game duration", "win", "champion", "champion id", "champion level", "deaths", "kills", "assists", "role", "wards killed", "wards placed"])
+writer.writerow(["summoner name", "game duration", "win", "champion", "champion id", "champion level", "deaths", "kills", "assists", "role", "wards killed", "wards placed", "dragon kills", "baron kills", "damage dealt to objectives", "damage dealt to turrets", "turrets lost", "turret kills", "total minions killed", "inhibitor takedowns", "inhibitor kills"])
 for match_dict in match_data:
     writer.writerow(match_dict.values())
 matches_formatted_file.close()
